@@ -19,5 +19,6 @@ COPY docker/install.sh /tmp/
 RUN /tmp/install.sh && rm /tmp/install.sh
 # Update node folder with relevant config to finalize installation
 COPY ./doc/etc/dht.config.ini /srv/dhtnode/dhtnode-0/etc/config.ini
+COPY ./doc/etc/credentials /srv/dhtnode/dhtnode-0/etc/credentials
 WORKDIR /srv/dhtnode/dhtnode-0
 CMD dhtnode -c /srv/dhtnode/dhtnode-0/etc/config.ini
